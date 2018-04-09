@@ -18,13 +18,14 @@ app.use(function(req, res, next) {
   next();
 });
 
-const port = process.env.PORT || '3200';
-app.set('port', port);
+// const port = process.env.PORT || '3200';
+// app.set('port', port);
 
 
 // Create HTTP server
 const server = http.createServer(app);
-server.listen( port , () => console.log('Running on port 3200'));
+// server.listen( 3200 , () => console.log('Running on port 3200')); // for localhost
+server.listen( process.env.PORT , () => console.log('Running on heroku')); // for heroku
 
 /*var dbServer = require('./test-mongodb/app');
 dbServer(app);*/
