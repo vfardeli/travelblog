@@ -1,0 +1,43 @@
+<div class="container cl-body-margin cl-body-width-70">
+
+  <div class="media cl-border cl-margin" *ngFor="let post of posts">
+    <div class="media-left">
+      <a href="">
+        <img class="media-object" width="256" height="256" src="{{post.image}}" alt="image">
+      </a>
+    </div>
+    <div class="media-body cl-padding">
+      <h4 class="media-heading">{{post.name}}</h4>
+      <p>
+        {{post.description}}
+      </p>
+      <a routerLink="/blogs/{{post._id}}" class="btn btn-primary">
+        Read More
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+
+
+
+
+  <!-- <div class="media cl-border cl-margin">
+    <div class="media-left">
+      <a href="#">
+        <img class="media-object" width="256" height="256" src="https://farm6.staticflickr.com/5232/14207054261_6cc36081f9.jpg" alt="santorini">
+      </a>
+    </div>
+    <div class="media-body cl-padding">
+      <h4 class="media-heading">Media heading</h4>
+      <p>
+        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum
+        in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue
+        felis in faucibus.
+      </p>
+      <button type="button" class="btn btn-primary">
+        Read More
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div> -->
+</div>

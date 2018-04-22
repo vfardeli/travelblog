@@ -1,0 +1,23 @@
+<div class="container">
+
+  <div *ngIf="errorFlag" class="alert alert-danger">
+    {{errorMsg}}
+  </div>
+
+  <div class="row">
+    <h1 class="cl-text-center">Add New Comment to The Post</h1>
+    <div class="cl-body-width-30 cl-body-margin">
+      <form>
+        <div class="form-group">
+          <input [(ngModel)]="newComment.text" class="form-control" type="text" name="text" placeholder="text">
+        </div>
+        <div class="form-group">
+          <a (click)="createComment(newComment)" class="btn btn-lg btn-primary btn-block">Submit!</a>
+        </div>
+        <div class="form-group">
+          <a routerLink="/blogs/{{post._id}}">Go Back</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

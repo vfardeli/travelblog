@@ -1,0 +1,44 @@
+<div class="container">
+
+    <div *ngIf="errorFlag" class="alert alert-danger">
+        {{errorMsg}}
+    </div>
+
+    <div class="row">
+        <h1 class="cl-text-center">Sign Up</h1>
+        <div class="cl-body-margin cl-body-width-30">
+            <form>
+                <div class="form-group">
+                    <input [(ngModel)]="newUser.username" class="form-control" type="text" name="username" placeholder="username">
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="newUser.password" class="form-control" type="password" name="password" placeholder="password">
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="verifyPassword" class="form-control" type="password" name="verifyPassword" placeholder="password">
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="newUser.firstName" class="form-control" type="text" name="firstName" placeholder="first name">
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="newUser.lastName" class="form-control" type="text" name="lastName" placeholder="last name">
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="newUser.email" class="form-control" type="email" name="email" placeholder="email">
+                </div>
+                <!-- <div class="form-group">
+                    <input [(ngModel)]="newUser.avatar" class="form-control" type="text" name="avatar" placeholder="avatar url">
+                </div> -->
+                <div class="form-group">
+                    <input [(ngModel)]="adminCode" class="form-control" type="text" name="adminCode" placeholder="Admin code">
+                </div>
+                <div class="form-group">
+                    <a (click)="register(newUser, verifyPassword, adminCode)" class="btn btn-primary btn-block">Submit</a>
+                </div>
+                <div class="form-group">
+                    <a routerLink="/blogs">Go Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

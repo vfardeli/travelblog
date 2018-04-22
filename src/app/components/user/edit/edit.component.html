@@ -1,0 +1,33 @@
+<div class="container">
+
+  <div *ngIf="errorFlag" class="alert alert-danger">
+    {{errorMessage}}
+  </div>
+
+  <div class="row">
+    <h1 class="cl-text-center">Edit Profile</h1>
+    <div class="cl-body-width-30 cl-body-margin">
+      <form>
+        <div class="form-group">
+          <input [(ngModel)]="user.firstName" class="form-control" type="text" name="firstName">
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="user.lastName" class="form-control" type="text" name="lastName">
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="user.email" class="form-control" type="email" name="email">
+        </div>
+        <!-- <div class="form-group">
+          <input [(ngModel)]="user.avatar" class="form-control" type="text" name="avatar">
+        </div> -->
+        <a class="btn btn-success btn-block " routerLink="/users/{{userId}}/flickr">Choose Avatar From Flickr</a>
+        <div class="form-group">
+          <a (click)="updateUser(user)" class="btn btn-primary btn-block">Submit</a>
+        </div>
+        <div class="form-group">
+          <a href="/campgrounds">Go Back</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
