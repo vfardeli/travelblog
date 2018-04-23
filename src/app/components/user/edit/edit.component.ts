@@ -58,7 +58,8 @@ export class EditComponent implements OnInit {
         (user: any) => {
           this.errorFlag = false;
           this.user = user;
-          this.router.navigate(['/users/' + user._id]);
+          const url: any = '/users/' + this.userId;
+          this.router.navigate([url]);
         },
         (error: any) => {
           this.errorFlag = true;
