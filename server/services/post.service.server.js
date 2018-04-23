@@ -80,18 +80,24 @@ module.exports = function (app) {
     function updatePost(req, res) {
         var postId = req.params["postId"];
         var updatedPost = req.body;
-        postModel.updatePost(postId, updatedPost).then(
-            function (post) {
-                if (post) {
-                    res.json(post);
-                } else {
-                    res.sendStatus(400).send("Cannot find post");
+        geocoder.geocode(updatedPost.location, function (err, data) {
+            updatedPost.lat = data.results[0].geometry.location.lat;
+            updatedPost.lng = data.results[0].geometry.location.lng;
+            updatedPost.location = data.results[0].formatted_address;
+            
+            postModel.updatePost(postId, updatedPost).then(
+                function (post) {
+                    if (post) {
+                        res.json(post);
+                    } else {
+                        res.sendStatus(400).send("Cannot find post");
+                    }
+                },
+                function (err) {
+                    res.sendStatus(400).send(err);
                 }
-            },
-            function (err) {
-                res.sendStatus(400).send(err);
-            }
-        );
+            );
+        });
     }
 
     function deletePost(req, res) {
