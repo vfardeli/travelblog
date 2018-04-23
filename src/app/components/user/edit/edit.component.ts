@@ -53,7 +53,7 @@ export class EditComponent implements OnInit {
       this.errorMessage = "Email cannot be empty \n";
       this.errorFlag = true;
     }
-    if (this.errorFlag = false) {
+    if (!this.errorFlag) {
       this.userService.updateUser(this.userId, updatedUser).subscribe(
         (user: any) => {
           this.errorFlag = false;
